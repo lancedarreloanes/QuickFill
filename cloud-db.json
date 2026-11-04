@@ -1,0 +1,806 @@
+{
+  "users": [
+    {
+      "id": "usr-seller-official",
+      "fullName": "Refilla Official Seller",
+      "email": "refilla_quickffill.2026@gmail.com",
+      "role": "seller",
+      "phone": "09243730042",
+      "createdAt": "2026-11-01T08:00:00.000Z",
+      "agreedToPrivacy": true
+    },
+    {
+      "id": "usr-demo-customer",
+      "fullName": "Maria Santos",
+      "email": "customer@quickfill.ph",
+      "role": "customer",
+      "phone": "0917 123 4567",
+      "createdAt": "2026-11-01T09:00:00.000Z",
+      "agreedToPrivacy": true
+    },
+    {
+      "id": "usr-1793765126543",
+      "fullName": "Donyang",
+      "email": "donitameneses13@gmail.com",
+      "role": "customer",
+      "createdAt": "2026-11-04T04:05:26.543Z",
+      "agreedToPrivacy": true
+    }
+  ],
+  "passwords": {
+    "refilla_quickffill.2026@gmail.com": "Seller2026!",
+    "customer@quickfill.ph": "QuickFill2026!",
+    "donitameneses13@gmail.com": "87654321"
+  },
+  "orders": [
+    {
+      "id": "REF-PH-299968",
+      "trackingNumber": "JNT-PH-41555688",
+      "createdAt": "Nov 04, 2026, 12:15 PM",
+      "region": "Luzon",
+      "estimatedDeliveryDate": "1–5 business days (Estimated Nov 5 – Nov 8, 2026)",
+      "customer": {
+        "fullName": "Donyang",
+        "phone": "0917 123 4567",
+        "email": "donitameneses13@gmail.com",
+        "region": "Luzon",
+        "cityProvince": "Quezon City, Metro Manila",
+        "barangay": "Barangay Loyola Heights",
+        "postalCode": "1108",
+        "completeAddress": "Unit 402, Green Residences, Katipunan Avenue",
+        "notes": "Please call before arrival"
+      },
+      "items": [
+        {
+          "id": "brightwash-calamansi-3L-1793765641688",
+          "productId": "brightwash",
+          "title": "Brightwash Dishwashing Powder (Calamansi Fresh) – 3L Pack",
+          "image": "/images/brightwash-green-v2.jpg",
+          "price": 89,
+          "quantity": 1,
+          "selectedScent": "calamansi",
+          "selectedSize": "3L"
+        }
+      ],
+      "subtotal": 89,
+      "shippingFee": 250,
+      "total": 339,
+      "paymentMethod": "gcash",
+      "paymentReference": "GCASH-5967085184021",
+      "paymentSenderNumber": "0917 123 4567",
+      "paymentProofImage": "data:image/jpeg;base64,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",
+      "paymentVerified": true,
+      "agreedToTerms": true,
+      "currentStatus": "placed",
+      "sellerNote": "GCASH QR Direct Transaction (GCASH-5967085184021) read & verified (0917 123 4567).",
+      "timeline": [
+        {
+          "status": "placed",
+          "title": "Order Placed",
+          "description": "Order registered and GCASH (GCASH-5967085184021) transaction verified.",
+          "timestamp": "12:15 PM",
+          "completed": true,
+          "current": true
+        },
+        {
+          "status": "packed",
+          "title": "Packed & Wooden Crated",
+          "description": "QuickFill Kart & Free 15L Brightwash pack prepared in secure freight packaging.",
+          "timestamp": "Within 24 hours",
+          "completed": false,
+          "current": false
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped to Region Hub",
+          "description": "Dispatched to courier hub servicing Luzon.",
+          "timestamp": "Pending dispatch",
+          "completed": false,
+          "current": false
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Designated courier vehicle en route to delivery address.",
+          "timestamp": "Pending arrival",
+          "completed": false,
+          "current": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "Customer accepts machine and receives official delivery receipt.",
+          "timestamp": "1–5 business days (Estimated Nov 5 – Nov 8, 2026)",
+          "completed": false,
+          "current": false
+        }
+      ]
+    },
+    {
+      "id": "REF-PH-890188",
+      "trackingNumber": "JNT-PH-72425177",
+      "createdAt": "Nov 04, 2026, 12:06 PM",
+      "region": "Luzon",
+      "estimatedDeliveryDate": "1–5 business days (Estimated Nov 5 – Nov 8, 2026)",
+      "customer": {
+        "fullName": "Donyang",
+        "phone": "0917 123 4567",
+        "email": "donitameneses13@gmail.com",
+        "region": "Luzon",
+        "cityProvince": "Quezon City, Metro Manila",
+        "barangay": "Barangay Loyola Heights",
+        "postalCode": "1108",
+        "completeAddress": "Unit 402, Green Residences, Katipunan Avenue",
+        "notes": "Please call before arrival"
+      },
+      "items": [
+        {
+          "id": "brightwash-calamansi-3L-1793765151822",
+          "productId": "brightwash",
+          "title": "Brightwash Dishwashing Powder (Calamansi Fresh) – 3L Pack",
+          "image": "/images/brightwash-green-v2.jpg",
+          "price": 89,
+          "quantity": 1,
+          "selectedScent": "calamansi",
+          "selectedSize": "3L"
+        }
+      ],
+      "subtotal": 89,
+      "shippingFee": 250,
+      "total": 339,
+      "paymentMethod": "cod",
+      "paymentReference": "COD-₱339",
+      "paymentVerified": false,
+      "agreedToTerms": true,
+      "currentStatus": "delivered",
+      "sellerNote": "Order received in Refilla Cloud. Seller notified for packing.",
+      "timeline": [
+        {
+          "status": "placed",
+          "title": "Order Placed",
+          "description": "Order registered and COD (COD-₱339) transaction verified.",
+          "timestamp": "12:06 PM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "packed",
+          "title": "Packed & Wooden Crated",
+          "description": "QuickFill Kart & Free 15L Brightwash pack prepared in secure freight packaging.",
+          "timestamp": "Within 24 hours",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped to Region Hub",
+          "description": "Dispatched to courier hub servicing Luzon.",
+          "timestamp": "Pending dispatch",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Designated courier vehicle en route to delivery address.",
+          "timestamp": "Pending arrival",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "Order received in Refilla Cloud. Seller notified for packing.",
+          "timestamp": "Nov 04, 12:06 PM (Seller Updated)",
+          "completed": true,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "REF-PH-804404",
+      "trackingNumber": "JNT-PH-25485508",
+      "createdAt": "Nov 04, 2026, 11:47 AM",
+      "region": "Luzon",
+      "estimatedDeliveryDate": "1–5 business days (Estimated Nov 5 – Nov 8, 2026)",
+      "customer": {
+        "fullName": "Maria Santos",
+        "phone": "0917 123 4567",
+        "email": "customer@quickfill.ph",
+        "region": "Luzon",
+        "cityProvince": "Quezon City, Metro Manila",
+        "barangay": "Barangay Loyola Heights",
+        "postalCode": "1108",
+        "completeAddress": "Unit 402, Green Residences, Katipunan Avenue",
+        "notes": "Please call before arrival"
+      },
+      "items": [
+        {
+          "id": "brightwash-fresh-blue-3L-1793763758040",
+          "productId": "brightwash",
+          "title": "Brightwash Dishwashing Powder (Fresh Blue Anti-Bac) – 3L Pack",
+          "image": "/images/brightwash-blue.jpg",
+          "price": 89,
+          "quantity": 1,
+          "selectedScent": "fresh-blue",
+          "selectedSize": "3L"
+        }
+      ],
+      "subtotal": 89,
+      "shippingFee": 250,
+      "total": 339,
+      "paymentMethod": "gcash",
+      "paymentReference": "GCASH-6986920193682",
+      "paymentSenderNumber": "09772654741",
+      "paymentProofImage": "data:image/jpeg;base64,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",
+      "paymentVerified": true,
+      "agreedToTerms": true,
+      "currentStatus": "delivered",
+      "sellerNote": "GCASH QR Direct Transaction (GCASH-6986920193682) read & verified (09772654741).",
+      "timeline": [
+        {
+          "status": "placed",
+          "title": "Order Placed",
+          "description": "Order registered and GCASH (GCASH-6986920193682) transaction verified.",
+          "timestamp": "11:47 AM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "packed",
+          "title": "Packed & Wooden Crated",
+          "description": "QuickFill Kart & Free 15L Brightwash pack prepared in secure freight packaging.",
+          "timestamp": "Within 24 hours",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped to Region Hub",
+          "description": "Dispatched to courier hub servicing Luzon.",
+          "timestamp": "Pending dispatch",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Designated courier vehicle en route to delivery address.",
+          "timestamp": "Pending arrival",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "GCASH QR Direct Transaction (GCASH-6986920193682) read & verified (09772654741).",
+          "timestamp": "Nov 04, 11:55 AM (Seller Updated)",
+          "completed": true,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "REF-PH-744883",
+      "trackingNumber": "JNT-PH-94626627",
+      "createdAt": "Nov 04, 2026, 11:31 AM",
+      "region": "Luzon",
+      "estimatedDeliveryDate": "1–5 business days (Estimated Nov 5 – Nov 8, 2026)",
+      "customer": {
+        "fullName": "Maria Santos",
+        "phone": "0917 123 4567",
+        "email": "customer@quickfill.ph",
+        "region": "Luzon",
+        "cityProvince": "Quezon City, Metro Manila",
+        "barangay": "Barangay Loyola Heights",
+        "postalCode": "1108",
+        "completeAddress": "Unit 402, Green Residences, Katipunan Avenue",
+        "notes": "Please call before arrival"
+      },
+      "items": [
+        {
+          "id": "brightwash-calamansi-3L-1793762747078",
+          "productId": "brightwash",
+          "title": "Brightwash Dishwashing Powder (Calamansi Fresh) – 3L Pack",
+          "image": "/images/brightwash-green-v2.jpg",
+          "price": 89,
+          "quantity": 1,
+          "selectedScent": "calamansi",
+          "selectedSize": "3L"
+        }
+      ],
+      "subtotal": 89,
+      "shippingFee": 250,
+      "total": 339,
+      "paymentMethod": "gcash",
+      "paymentReference": "GCASH-2529418493615",
+      "paymentSenderNumber": "0917 123 4567",
+      "paymentVerified": true,
+      "agreedToTerms": true,
+      "currentStatus": "delivered",
+      "sellerNote": "GCASH QR Direct Transaction (GCASH-2529418493615) read & verified (0917 123 4567).",
+      "timeline": [
+        {
+          "status": "placed",
+          "title": "Order Placed",
+          "description": "Order registered and GCASH (GCASH-2529418493615) transaction verified.",
+          "timestamp": "11:31 AM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "packed",
+          "title": "Packed & Wooden Crated",
+          "description": "QuickFill Kart & Free 15L Brightwash pack prepared in secure freight packaging.",
+          "timestamp": "Within 24 hours",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped to Region Hub",
+          "description": "Dispatched to courier hub servicing Luzon.",
+          "timestamp": "Pending dispatch",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Designated courier vehicle en route to delivery address.",
+          "timestamp": "Pending arrival",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "GCASH QR Direct Transaction (GCASH-2529418493615) read & verified (0917 123 4567).",
+          "timestamp": "Nov 04, 11:55 AM (Seller Updated)",
+          "completed": true,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "REF-PH-257741",
+      "trackingNumber": "JNT-PH-89642974",
+      "createdAt": "Nov 04, 2026, 10:51 AM",
+      "region": "Luzon",
+      "estimatedDeliveryDate": "1–5 business days (Estimated Nov 5 – Nov 8, 2026)",
+      "customer": {
+        "fullName": "Maria Santos",
+        "phone": "0917 123 4567",
+        "email": "customer@quickfill.ph",
+        "region": "Luzon",
+        "cityProvince": "Quezon City, Metro Manila",
+        "barangay": "Barangay Loyola Heights",
+        "postalCode": "1108",
+        "completeAddress": "Unit 402, Green Residences, Katipunan Avenue",
+        "notes": "Please call before arrival"
+      },
+      "items": [
+        {
+          "id": "brightwash-fresh-blue-15L-1793760693911",
+          "productId": "brightwash",
+          "title": "Brightwash Dishwashing Powder (Fresh Blue Anti-Bac) – 15L Pack",
+          "image": "/images/brightwash-blue.jpg",
+          "price": 299,
+          "quantity": 1,
+          "selectedScent": "fresh-blue",
+          "selectedSize": "15L"
+        }
+      ],
+      "subtotal": 299,
+      "shippingFee": 250,
+      "total": 549,
+      "paymentMethod": "cod",
+      "paymentReference": "COD-₱549",
+      "agreedToTerms": true,
+      "currentStatus": "delivered",
+      "sellerNote": "Order received in Refilla Cloud. Seller notified for packing.",
+      "timeline": [
+        {
+          "status": "placed",
+          "title": "Order Placed",
+          "description": "Order registered and COD (COD-₱549) recorded.",
+          "timestamp": "10:51 AM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "packed",
+          "title": "Packed & Wooden Crated",
+          "description": "QuickFill Kart & Free 15L Brightwash pack prepared in secure freight packaging.",
+          "timestamp": "Within 24 hours",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped to Region Hub",
+          "description": "Dispatched to courier hub servicing Luzon.",
+          "timestamp": "Pending dispatch",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Designated courier vehicle en route to delivery address.",
+          "timestamp": "Pending arrival",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "Order received in Refilla Cloud. Seller notified for packing.",
+          "timestamp": "Nov 04, 10:52 AM (Seller Updated)",
+          "completed": true,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "REF-PH-982140",
+      "trackingNumber": "JNT-PH-74819201",
+      "createdAt": "2026-11-03 10:30 AM",
+      "region": "Luzon",
+      "estimatedDeliveryDate": "1–5 business days (Estimated Nov 5 – Nov 8, 2026)",
+      "customer": {
+        "fullName": "Maria Santos",
+        "phone": "0917 123 4567",
+        "email": "customer@quickfill.ph",
+        "region": "Luzon",
+        "cityProvince": "Quezon City, Metro Manila",
+        "barangay": "Barangay Loyola Heights",
+        "postalCode": "1108",
+        "completeAddress": "Unit 402 Green Residences, Katipunan Ave",
+        "notes": "Please call before arrival"
+      },
+      "items": [
+        {
+          "id": "demo-item-green",
+          "productId": "machine",
+          "title": "QuickFill Kart (Eco Green) + Free 15L Brightwash Lemon Citrus",
+          "image": "/images/machine-green-v2.jpg",
+          "price": 7999,
+          "quantity": 1,
+          "selectedColor": "green",
+          "includedFreeScent": "lemon"
+        }
+      ],
+      "subtotal": 7999,
+      "shippingFee": 250,
+      "total": 8249,
+      "paymentMethod": "cod",
+      "paymentReference": "COD-VERIFIED",
+      "agreedToTerms": true,
+      "currentStatus": "delivered",
+      "sellerNote": "Order received by Refilla Warehouse. Preparing wooden crate and Free 15L Brightwash pack.",
+      "timeline": [
+        {
+          "status": "placed",
+          "title": "Order Placed",
+          "description": "Order registered and verified in Refilla Cloud.",
+          "timestamp": "Nov 03, 2026 10:30 AM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "packed",
+          "title": "Packed & Wooden Crated",
+          "description": "QuickFill Kart & Free 15L Brightwash pack prepared in secure freight packaging.",
+          "timestamp": "Within 24 hours",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped to Region Hub",
+          "description": "Dispatched to courier hub servicing Luzon.",
+          "timestamp": "Pending dispatch",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Designated courier vehicle en route to delivery address.",
+          "timestamp": "Pending arrival",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "Order received by Refilla Warehouse. Preparing wooden crate and Free 15L Brightwash pack.",
+          "timestamp": "Nov 04, 10:46 AM (Seller Updated)",
+          "completed": true,
+          "current": true
+        }
+      ]
+    },
+    {
+      "id": "REF-PH-841029",
+      "trackingNumber": "JNT-PH-61920488",
+      "createdAt": "2026-10-28 09:15 AM",
+      "region": "Luzon",
+      "estimatedDeliveryDate": "Delivered on Nov 01, 2026",
+      "customer": {
+        "fullName": "Maria Santos",
+        "phone": "0917 123 4567",
+        "email": "customer@quickfill.ph",
+        "region": "Luzon",
+        "cityProvince": "Quezon City, Metro Manila",
+        "barangay": "Barangay Loyola Heights",
+        "postalCode": "1108",
+        "completeAddress": "Unit 402 Green Residences, Katipunan Ave",
+        "notes": "Received at lobby guardhouse"
+      },
+      "items": [
+        {
+          "id": "delivered-item-green",
+          "productId": "machine",
+          "title": "QuickFill Kart (Eco Green) + Free 15L Brightwash Calamansi Fresh",
+          "image": "/images/machine-green-v2.jpg",
+          "price": 7999,
+          "quantity": 1,
+          "selectedColor": "green",
+          "includedFreeScent": "calamansi"
+        },
+        {
+          "id": "delivered-item-refill",
+          "productId": "brightwash",
+          "title": "Brightwash Dishwashing Powder (Calamansi Fresh) – 15L Pack",
+          "image": "/images/brightwash-green-v2.jpg",
+          "price": 299,
+          "quantity": 2,
+          "selectedScent": "calamansi",
+          "selectedSize": "15L"
+        }
+      ],
+      "subtotal": 8597,
+      "shippingFee": 250,
+      "total": 8847,
+      "paymentMethod": "gcash",
+      "paymentReference": "GCASH-849201743",
+      "agreedToTerms": true,
+      "currentStatus": "delivered",
+      "sellerNote": "Successfully delivered and signed by Maria Santos.",
+      "timeline": [
+        {
+          "status": "placed",
+          "title": "Order Placed",
+          "description": "Order registered and GCash payment verified.",
+          "timestamp": "Oct 28, 2026 09:15 AM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "packed",
+          "title": "Packed & Wooden Crated",
+          "description": "QuickFill Kart & Free 15L Brightwash pack prepared in wooden crate.",
+          "timestamp": "Oct 29, 2026 02:10 PM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped to Region Hub",
+          "description": "Dispatched to J&T Cargo Quezon City Hub.",
+          "timestamp": "Oct 30, 2026 11:00 AM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Courier rider en route to Katipunan Ave.",
+          "timestamp": "Nov 01, 2026 09:40 AM",
+          "completed": true,
+          "current": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "Successfully delivered and signed by Maria Santos.",
+          "timestamp": "Nov 01, 2026 03:25 PM",
+          "completed": true,
+          "current": true
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-welcome-1",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Welcome to Refilla! Feel free to message us here anytime about your QuickFill Kart (₱7,999 with Free 15L Brightwash Pack) or your order tracking.",
+      "orderId": "REF-PH-982140",
+      "createdAt": "2026-11-04T01:46:16.055Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-status-1793760402520",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "📦 Order #REF-PH-982140 Update: Status is now \"Delivered\". Note: Order received by Refilla Warehouse. Preparing wooden crate and Free 15L Brightwash pack.",
+      "orderId": "REF-PH-982140",
+      "createdAt": "2026-11-04T02:46:42.520Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-order-1793760713436",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Order Confirmed! We received your order #REF-PH-257741 (Total: ₱549 via COD). Your QuickFill Kart and Free 15L Brightwash pack are now queued for packing.",
+      "orderId": "REF-PH-257741",
+      "createdAt": "2026-11-04T02:51:53.436Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-status-1793760757977",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "📦 Order #REF-PH-257741 Update: Status is now \"Delivered\". Note: Order received in Refilla Cloud. Seller notified for packing.",
+      "orderId": "REF-PH-257741",
+      "createdAt": "2026-11-04T02:52:37.977Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-order-1793763104995",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Order Confirmed! We received your order #REF-PH-744883 (Total: ₱339 via GCASH). Your QuickFill Kart and Free 15L Brightwash pack are now queued for packing.",
+      "orderId": "REF-PH-744883",
+      "createdAt": "2026-11-04T03:31:44.995Z",
+      "readBySeller": true,
+      "readByCustomer": false
+    },
+    {
+      "id": "msg-order-1793764048226",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Order Confirmed! We received your order #REF-PH-804404 (Total: ₱339 via GCASH). Your QuickFill Kart and Free 15L Brightwash pack are now queued for packing.",
+      "orderId": "REF-PH-804404",
+      "createdAt": "2026-11-04T03:47:28.226Z",
+      "readBySeller": true,
+      "readByCustomer": false
+    },
+    {
+      "id": "msg-status-1793764532092",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "📦 Order #REF-PH-804404 Update: Status is now \"Delivered\". Note: GCASH QR Direct Transaction (GCASH-6986920193682) read & verified (09772654741).",
+      "orderId": "REF-PH-804404",
+      "createdAt": "2026-11-04T03:55:32.092Z",
+      "readBySeller": true,
+      "readByCustomer": false
+    },
+    {
+      "id": "msg-status-1793764535313",
+      "threadId": "customer@quickfill.ph",
+      "customerName": "Maria Santos",
+      "customerEmail": "customer@quickfill.ph",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "📦 Order #REF-PH-744883 Update: Status is now \"Delivered\". Note: GCASH QR Direct Transaction (GCASH-2529418493615) read & verified (0917 123 4567).",
+      "orderId": "REF-PH-744883",
+      "createdAt": "2026-11-04T03:55:35.313Z",
+      "readBySeller": true,
+      "readByCustomer": false
+    },
+    {
+      "id": "msg-welcome-1793765126544",
+      "threadId": "donitameneses13@gmail.com",
+      "customerName": "Donyang",
+      "customerEmail": "donitameneses13@gmail.com",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Hello Donyang! Welcome to Refilla. Let us know if you have any questions about the QuickFill Kart (₱7,999 with Free 15L Brightwash Pack) or your orders.",
+      "createdAt": "2026-11-04T04:05:26.544Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-order-1793765174449",
+      "threadId": "donitameneses13@gmail.com",
+      "customerName": "Donyang",
+      "customerEmail": "donitameneses13@gmail.com",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Order Confirmed! We received your order #REF-PH-890188 (Total: ₱339 via COD). Your QuickFill Kart and Free 15L Brightwash pack are now queued for packing.",
+      "orderId": "REF-PH-890188",
+      "createdAt": "2026-11-04T04:06:14.449Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-status-1793765183559",
+      "threadId": "donitameneses13@gmail.com",
+      "customerName": "Donyang",
+      "customerEmail": "donitameneses13@gmail.com",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "📦 Order #REF-PH-890188 Update: Status is now \"Delivered\". Note: Order received in Refilla Cloud. Seller notified for packing.",
+      "orderId": "REF-PH-890188",
+      "createdAt": "2026-11-04T04:06:23.559Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-1793765508702-gt6k",
+      "threadId": "donitameneses13@gmail.com",
+      "customerName": "Donyang",
+      "customerEmail": "donitameneses13@gmail.com",
+      "senderRole": "customer",
+      "senderName": "Donyang",
+      "text": "Is the Eco Green QuickFill Kart (₱7,999 + Free 15L Pack) ready to ship?",
+      "createdAt": "2026-11-04T04:11:48.702Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-1793765529771-p9ta",
+      "threadId": "donitameneses13@gmail.com",
+      "customerName": "Donyang",
+      "customerEmail": "donitameneses13@gmail.com",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Thank you for messaging Refilla! All 5 QuickFill Kart colors are in stock at ₱7,999 with a Free 15L Brightwash pack.",
+      "createdAt": "2026-11-04T04:12:09.771Z",
+      "readBySeller": true,
+      "readByCustomer": true
+    },
+    {
+      "id": "msg-order-1793765750855",
+      "threadId": "donitameneses13@gmail.com",
+      "customerName": "Donyang",
+      "customerEmail": "donitameneses13@gmail.com",
+      "senderRole": "seller",
+      "senderName": "Refilla Official Seller",
+      "text": "Order Confirmed! We received your order #REF-PH-299968 (Total: ₱339 via GCASH). Your QuickFill Kart and Free 15L Brightwash pack are now queued for packing.",
+      "orderId": "REF-PH-299968",
+      "createdAt": "2026-11-04T04:15:50.855Z",
+      "readBySeller": true,
+      "readByCustomer": false
+    }
+  ],
+  "paymentSettings": {
+    "gcashNumber": "+63 977 265 ••••",
+    "gcashAccountName": "VI*****A M. (Refilla Official)",
+    "gcashQrImage": "/images/gcash-qr.jpg",
+    "mayaNumber": "0924-373-0042",
+    "mayaAccountName": "Refilla QuickFill Official",
+    "paymongoSecretKey": ""
+  },
+  "updatedAt": 1793765750855
+}

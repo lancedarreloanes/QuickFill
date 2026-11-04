@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="containerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="25%" stop-color="#ffffff" />
+      <stop offset="65%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+    <linearGradient id="soapLiquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a3e635" />
+      <stop offset="35%" stop-color="#84cc16" />
+      <stop offset="80%" stop-color="#4d7c0f" />
+      <stop offset="100%" stop-color="#365314" />
+    </linearGradient>
+    <linearGradient id="labelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="60%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#0c4a6e" />
+    </linearGradient>
+    <linearGradient id="citrusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#84cc16" />
+    </linearGradient>
+    <filter id="jugShadow" x="-10%" y="-5%" width="120%" height="115%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Floor Shadow -->
+  <ellipse cx="300" cy="650" rx="190" ry="22" fill="#0f172a" opacity="0.2" filter="blur(6px)" />
+
+  <g filter="url(#jugShadow)">
+    <!-- Container Cap / Spout -->
+    <rect x="235" y="65" width="130" height="30" rx="6" fill="#dc2626" stroke="#991b1b" stroke-width="2" />
+    <line x1="245" y1="72" x2="245" y2="88" stroke="#fca5a5" stroke-width="3" />
+    <line x1="260" y1="72" x2="260" y2="88" stroke="#fca5a5" stroke-width="3" />
+    <line x1="275" y1="72" x2="275" y2="88" stroke="#fca5a5" stroke-width="3" />
+    <line x1="325" y1="72" x2="325" y2="88" stroke="#fca5a5" stroke-width="3" />
+    <line x1="340" y1="72" x2="340" y2="88" stroke="#fca5a5" stroke-width="3" />
+    <line x1="355" y1="72" x2="355" y2="88" stroke="#fca5a5" stroke-width="3" />
+    <!-- Neck -->
+    <rect x="250" y="95" width="100" height="25" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
+
+    <!-- Molded Heavy Duty Handle -->
+    <path d="M 230 120 C 230 70 370 70 370 120 L 370 185 C 370 200 355 205 340 195 L 340 145 C 340 125 260 125 260 145 L 260 195 C 245 205 230 200 230 185 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" />
+
+    <!-- Main 20L Jerrycan Body -->
+    <path d="M 170 160 C 170 135 200 120 230 120 L 370 120 C 400 120 430 135 430 160 L 440 600 C 440 625 415 635 390 635 L 210 635 C 185 635 160 625 160 600 Z" fill="url(#containerGrad)" stroke="#94a3b8" stroke-width="3" />
+
+    <!-- Translucent View Strip (Shows Green Concentrated Liquid Inside) -->
+    <g transform="translate(180, 200)">
+      <rect x="0" y="0" width="34" height="400" rx="8" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" />
+      <rect x="4" y="20" width="26" height="370" rx="4" fill="url(#soapLiquidGrad)" />
+      <!-- Measurement Level Markings -->
+      <line x1="6" y1="30" x2="18" y2="30" stroke="#ffffff" stroke-width="2" />
+      <text x="32" y="34" font-family="'Plus Jakarta Sans', Arial" font-size="9" fill="#0f172a" font-weight="bold">20L</text>
+      <line x1="6" y1="120" x2="16" y2="120" stroke="#ffffff" stroke-width="1.5" />
+      <text x="32" y="124" font-family="'Plus Jakarta Sans', Arial" font-size="8" fill="#475569">15L</text>
+      <line x1="6" y1="210" x2="16" y2="210" stroke="#ffffff" stroke-width="1.5" />
+      <text x="32" y="214" font-family="'Plus Jakarta Sans', Arial" font-size="8" fill="#475569">10L</text>
+      <line x1="6" y1="300" x2="16" y2="300" stroke="#ffffff" stroke-width="1.5" />
+      <text x="32" y="304" font-family="'Plus Jakarta Sans', Arial" font-size="8" fill="#475569">5L</text>
+    </g>
+
+    <!-- Commercial Front Brand Label -->
+    <g transform="translate(225, 205)">
+      <rect x="0" y="0" width="195" height="390" rx="12" fill="url(#labelGrad)" stroke="#38bdf8" stroke-width="2" />
+
+      <!-- Top Badge -->
+      <rect x="15" y="15" width="165" height="24" rx="12" fill="#ef4444" />
+      <text x="97" y="31" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="10" font-weight="800" fill="#ffffff" letter-spacing="1">FREE BUNDLE WITH MACHINE</text>
+
+      <!-- Brand Header -->
+      <text x="97" y="65" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="20" font-weight="900" fill="#ffffff">PUR PRO™</text>
+      <text x="97" y="80" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1.5">ANTIBACTERIAL CONCENTRATE</text>
+
+      <!-- Calamansi Badge Graphic -->
+      <g transform="translate(47, 95)">
+        <circle cx="50" cy="50" r="44" fill="url(#citrusGrad)" stroke="#ffffff" stroke-width="3" />
+        <!-- Calamansi segments -->
+        <circle cx="50" cy="50" r="36" fill="#84cc16" stroke="#4d7c0f" stroke-width="2" />
+        <path d="M 50 15 L 50 85 M 15 50 L 85 50 M 25 25 L 75 75 M 25 75 L 75 25" stroke="#fef08a" stroke-width="2" />
+        <circle cx="50" cy="50" r="8" fill="#fef08a" />
+        <!-- Leaf -->
+        <path d="M 75 18 C 90 10 95 30 80 32 Z" fill="#15803d" />
+      </g>
+
+      <text x="97" y="215" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="14" font-weight="800" fill="#ffffff">CALAMANSI FRESH</text>
+      <text x="97" y="230" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="10" font-weight="600" fill="#bae6fd">Cuts 100% Grease &amp; Odor</text>
+
+      <!-- Value / Volume Box -->
+      <rect x="20" y="248" width="155" height="55" rx="8" fill="#0f172a" stroke="#22c55e" stroke-width="1.5" />
+      <text x="97" y="270" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="16" font-weight="900" fill="#4ade80">20 LITERS</text>
+      <text x="97" y="286" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="9" font-weight="700" fill="#ffffff">YIELDS ₱2,000+ IN COINS</text>
+      <text x="97" y="296" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial" font-size="8" font-weight="500" fill="#94a3b8">Market Value: ₱2,499 (FREE)</text>
+
+      <!-- Features bullet list -->
+      <g transform="translate(25, 318)" font-family="'Plus Jakarta Sans', Arial" font-size="8" fill="#e0f2fe" font-weight="600">
+        <text x="0" y="10">✓ Biodegradable &amp; Hand-Safe</text>
+        <text x="0" y="24">✓ Dense Foam &amp; Quick Rinse</text>
+        <text x="0" y="38">✓ Specially Calibrated for Vendo</text>
+        <text x="0" y="52">✓ High Viscosity Formula</text>
+      </g>
+    </g>
+
+    <!-- Side carry grip notches -->
+    <rect x="155" y="320" width="10" height="80" rx="5" fill="#94a3b8" />
+  </g>
+</svg>
+
