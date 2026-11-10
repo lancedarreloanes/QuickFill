@@ -129,6 +129,22 @@ export const Header: React.FC<HeaderProps> = ({
                   </button>
 
                   <button
+                    onClick={() => {
+                      if (currentPage !== 'home') {
+                        onNavigate('home');
+                        setTimeout(() => {
+                          document.getElementById('production-history')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 150);
+                      } else {
+                        document.getElementById('production-history')?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="relative transition-all duration-200 py-1.5 border-b-2 border-transparent hover:text-[#1b4d2e] hover:border-emerald-300"
+                  >
+                    How It's Built
+                  </button>
+
+                  <button
                     onClick={() => onNavigate('my-orders')}
                     className={`relative transition-all duration-200 py-1.5 border-b-2 ${
                       currentPage === 'my-orders'
@@ -317,6 +333,22 @@ export const Header: React.FC<HeaderProps> = ({
                 className="text-left px-3 py-2 rounded-xl text-sm font-semibold text-gray-800 hover:bg-emerald-50 hover:text-[#1b4d2e] transition"
               >
                 How It Works &amp; Price Table
+              </button>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (currentPage !== 'home') {
+                    onNavigate('home');
+                    setTimeout(() => {
+                      document.getElementById('production-history')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 150);
+                  } else {
+                    document.getElementById('production-history')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-left px-3 py-2 rounded-xl text-sm font-semibold text-gray-800 hover:bg-emerald-50 hover:text-[#1b4d2e] transition"
+              >
+                How We Build the QuickFill Kart (7 Steps)
               </button>
               <button
                 onClick={() => { setMobileMenuOpen(false); onNavigate('faq'); }}

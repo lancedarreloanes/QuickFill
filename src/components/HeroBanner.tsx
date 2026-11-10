@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle2, Leaf, Sparkles } from 'lucide-react';
 import { MachineColor, NavigationPage } from '../types';
 import { MACHINE_PRODUCT } from '../data/refillaData';
@@ -11,29 +11,38 @@ interface HeroBannerProps {
 export const HeroBanner: React.FC<HeroBannerProps> = ({ onNavigate, onSelectMachineColor }) => {
   const [previewColor, setPreviewColor] = useState<MachineColor>('green');
   const activeColorObj = MACHINE_PRODUCT.colors.find(c => c.id === previewColor) || MACHINE_PRODUCT.colors[0];
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+    vid.muted = true;
+    vid.defaultMuted = true;
+    vid.play().catch(() => {
+      // Autoplay will resume on first user interaction if browser power-saver blocks it
+    });
+  }, []);
 
   return (
-    <section className="relative min-h-[600px] lg:min-h-[660px] flex items-end lg:items-center overflow-hidden bg-gradient-to-br from-[#0b2414] via-[#12351f] to-[#0f3d23] text-white">
+    <section className="relative min-h-[620px] lg:min-h-[680px] flex items-end lg:items-center overflow-hidden bg-[#0a2314] text-white">
       
-      {/* Animated Floating Ambient Emerald Orbs */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-emerald-400/20 blur-3xl animate-float-slow pointer-events-none" />
-      <div className="absolute -bottom-28 -left-20 w-80 h-80 rounded-full bg-green-500/15 blur-3xl animate-float-gentle pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[520px] h-[520px] rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
-
-      {/* Atmospheric organic wave / stone texture backdrop */}
-      <div
-        className="absolute inset-0 opacity-35 pointer-events-none"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 75% 35%, rgba(74, 222, 128, 0.32) 0%, transparent 55%),
-            radial-gradient(circle at 20% 80%, rgba(20, 83, 45, 0.85) 0%, transparent 60%),
-            repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 18px)
-          `
-        }}
+      {/* Live Background Video (Crystal-Clear & Autoplay Enforced) */}
+      <video
+        ref={videoRef}
+        src="/videos/hero-bg.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="absolute inset-0 z-0 w-full h-full object-cover object-center brightness-105 contrast-105 pointer-events-none select-none"
       />
 
-      {/* Soft vignette gradient from bottom-left for crisp text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#081b10]/95 via-[#12351f]/65 to-transparent lg:bg-gradient-to-r lg:from-[#081b10]/95 lg:via-[#12351f]/80 lg:to-[#1b4d2e]/30 pointer-events-none" />
+      {/* Light Emerald Tint Overlay so the Live Video stays vivid and clearly visible */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-[#071f10]/60 via-[#0d2e19]/30 to-[#071f10]/20 pointer-events-none" />
+
+      {/* Subtle Bottom Fade Only */}
+      <div className="absolute inset-x-0 bottom-0 h-28 z-1 bg-gradient-to-t from-[#06180d]/65 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-12 py-14 sm:py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -100,8 +109,11 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onNavigate, onSelectMach
           </div>
 
           {/* Right Column: Interactive Floating 5-Color QuickFill Kart Showcase */}
-          <div className="lg:col-span-5 animate-fade-up delay-200">
-            <div className="animate-float-gentle relative bg-gradient-to-b from-white/15 to-emerald-950/40 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-emerald-400/30 shadow-[0_24px_60px_-15px_rgba(0,0,0,0.55)] space-y-4">
+          <div className="lg:col-span-5 animate-fade-up delay-200 relative">
+            {/* Ambient Emerald Halo Behind Kart Card */}
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-emerald-500/30 via-green-400/20 to-teal-300/25 blur-2xl pointer-events-none" />
+
+            <div className="animate-float-gentle relative bg-gradient-to-b from-white/20 via-emerald-950/55 to-[#081f11]/80 backdrop-blur-xl p-5 sm:p-6 rounded-3xl border border-emerald-300/40 shadow-[0_28px_70px_-15px_rgba(0,0,0,0.7)] ring-1 ring-white/15 space-y-4">
               
               {/* Top Glowing Header inside Showcase */}
               <div className="flex items-center justify-between">

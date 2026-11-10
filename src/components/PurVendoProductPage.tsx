@@ -3,6 +3,7 @@ import { ShoppingCart, Zap, Check, Shield, Truck, RotateCcw, Award, ChevronRight
 import { MACHINE_PRODUCT, BRIGHTWASH_SCENTS } from '../data/refillaData';
 import { MachineColor, ScentOption, CartItem } from '../types';
 import { SocialLinks } from './SocialLinks';
+import { ProductionProcessSection } from './ProductionProcessSection';
 
 interface PurVendoProductPageProps {
   initialColor?: MachineColor;
@@ -442,6 +443,11 @@ export const PurVendoProductPage: React.FC<PurVendoProductPageProps> = ({
           </div>
         </div>
 
+      </div>
+
+      {/* 7-Step Production & Craftsmanship History */}
+      <div className="mt-10">
+        <ProductionProcessSection compact />
       </div>
     </div>
   );

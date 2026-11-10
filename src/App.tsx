@@ -10,6 +10,7 @@ import { BrandStory } from './components/BrandStory';
 import { Bestsellers } from './components/Bestsellers';
 import { FeatureBlocks } from './components/FeatureBlocks';
 import { HowItWorks } from './components/HowItWorks';
+import { ProductionProcessSection } from './components/ProductionProcessSection';
 import { DeliveryTable } from './components/DeliveryTable';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { PurVendoProductPage } from './components/PurVendoProductPage';
@@ -48,16 +49,16 @@ export function App() {
   // Cart state persisted in localStorage
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('refilla_cart_v2');
+      const saved = localStorage.getItem('refilla_cart_v3_fresh');
       if (!saved) return [];
       const parsed: CartItem[] = JSON.parse(saved);
       return parsed.map(item =>
         item.productId === 'machine'
           ? {
-              ...item,
-              price: MACHINE_PRODUCT.price,
-              image: item.selectedColor === 'green' ? '/images/machine-green-v2.jpg' : item.image
-            }
+            ...item,
+            price: MACHINE_PRODUCT.price,
+            image: item.selectedColor === 'green' ? '/images/machine-green-v2.jpg' : item.image
+          }
           : item.image === '/images/brightwash-green.jpg'
             ? { ...item, image: '/images/brightwash-green-v2.jpg' }
             : item
@@ -90,7 +91,7 @@ export function App() {
   // Sync cart to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('refilla_cart_v2', JSON.stringify(cartItems));
+      localStorage.setItem('refilla_cart_v3_fresh', JSON.stringify(cartItems));
     } catch { }
   }, [cartItems]);
 
@@ -424,6 +425,7 @@ export function App() {
                   onSelectMachineColor={(c) => setSelectedMachineColor(c)}
                 />
                 <FeatureBlocks onNavigate={navigateTo} />
+                <ProductionProcessSection onNavigate={navigateTo} />
                 <HowItWorks onNavigate={navigateTo} />
                 <DeliveryTable />
                 <WhyChooseUs />
@@ -452,6 +454,7 @@ export function App() {
             {currentPage === 'how-it-works' && (
               <div className="py-8">
                 <HowItWorks onNavigate={navigateTo} />
+                <ProductionProcessSection onNavigate={navigateTo} />
                 <DeliveryTable />
                 <WhyChooseUs />
               </div>

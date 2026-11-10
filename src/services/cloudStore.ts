@@ -9,8 +9,8 @@ export interface CloudDatabaseState {
   updatedAt: number;
 }
 
-const STORAGE_KEY = 'refilla_cloud_db_v1';
-const CHANNEL_NAME = 'refilla_cloud_realtime_channel';
+const STORAGE_KEY = 'refilla_cloud_db_v2_fresh';
+const CHANNEL_NAME = 'refilla_cloud_realtime_channel_v2';
 const CLOUD_ENDPOINT = (import.meta as unknown as { env?: Record<string, string> }).env?.VITE_CLOUD_DB_URL || '/api/cloud';
 
 const OFFICIAL_SELLER_EMAIL = 'refilla_quickffill.2026@gmail.com';
@@ -24,21 +24,11 @@ const DEFAULT_USERS: UserAccount[] = [
     phone: '09243730042',
     createdAt: '2026-11-01T08:00:00.000Z',
     agreedToPrivacy: true
-  },
-  {
-    id: 'usr-demo-customer',
-    fullName: 'Maria Santos',
-    email: 'customer@quickfill.ph',
-    role: 'customer',
-    phone: '0917 123 4567',
-    createdAt: '2026-11-01T09:00:00.000Z',
-    agreedToPrivacy: true
   }
 ];
 
 const DEFAULT_PASSWORDS: Record<string, string> = {
-  [OFFICIAL_SELLER_EMAIL]: 'Seller2026!',
-  'customer@quickfill.ph': 'QuickFill2026!'
+  [OFFICIAL_SELLER_EMAIL]: 'Seller2026!'
 };
 
 const DEFAULT_PAYMENT_SETTINGS: SellerPaymentSettings = {
@@ -50,194 +40,9 @@ const DEFAULT_PAYMENT_SETTINGS: SellerPaymentSettings = {
   paymongoSecretKey: ''
 };
 
-const DEFAULT_ORDERS: Order[] = [
-  {
-    id: 'REF-PH-982140',
-    trackingNumber: 'JNT-PH-74819201',
-    createdAt: '2026-11-03 10:30 AM',
-    region: 'Luzon',
-    estimatedDeliveryDate: '1–5 business days (Estimated Nov 5 – Nov 8, 2026)',
-    customer: {
-      fullName: 'Maria Santos',
-      phone: '0917 123 4567',
-      email: 'customer@quickfill.ph',
-      region: 'Luzon',
-      cityProvince: 'Quezon City, Metro Manila',
-      barangay: 'Barangay Loyola Heights',
-      postalCode: '1108',
-      completeAddress: 'Unit 402 Green Residences, Katipunan Ave',
-      notes: 'Please call before arrival'
-    },
-    items: [
-      {
-        id: 'demo-item-green',
-        productId: 'machine',
-        title: 'QuickFill Kart (Eco Green) + Free 15L Brightwash Lemon Citrus',
-        image: '/images/machine-green-v2.jpg',
-        price: 7999,
-        quantity: 1,
-        selectedColor: 'green',
-        includedFreeScent: 'lemon'
-      }
-    ],
-    subtotal: 7999,
-    shippingFee: 250,
-    total: 8249,
-    paymentMethod: 'cod',
-    paymentReference: 'COD-VERIFIED',
-    agreedToTerms: true,
-    currentStatus: 'placed',
-    sellerNote: 'Order received by Refilla Warehouse. Preparing wooden crate and Free 15L Brightwash pack.',
-    timeline: [
-      {
-        status: 'placed',
-        title: 'Order Placed',
-        description: 'Order registered and verified in Refilla Cloud.',
-        timestamp: 'Nov 03, 2026 10:30 AM',
-        completed: true,
-        current: true
-      },
-      {
-        status: 'packed',
-        title: 'Packed & Wooden Crated',
-        description: 'QuickFill Kart & Free 15L Brightwash pack prepared in secure freight packaging.',
-        timestamp: 'Within 24 hours',
-        completed: false,
-        current: false
-      },
-      {
-        status: 'shipped',
-        title: 'Shipped to Region Hub',
-        description: 'Dispatched to courier hub servicing Luzon.',
-        timestamp: 'Pending dispatch',
-        completed: false,
-        current: false
-      },
-      {
-        status: 'out_for_delivery',
-        title: 'Out for Delivery',
-        description: 'Designated courier vehicle en route to delivery address.',
-        timestamp: 'Pending arrival',
-        completed: false,
-        current: false
-      },
-      {
-        status: 'delivered',
-        title: 'Delivered',
-        description: 'Customer accepts machine and receives official delivery receipt.',
-        timestamp: 'Nov 5 – Nov 8, 2026',
-        completed: false,
-        current: false
-      }
-    ]
-  },
-  {
-    id: 'REF-PH-841029',
-    trackingNumber: 'JNT-PH-61920488',
-    createdAt: '2026-10-28 09:15 AM',
-    region: 'Luzon',
-    estimatedDeliveryDate: 'Delivered on Nov 01, 2026',
-    customer: {
-      fullName: 'Maria Santos',
-      phone: '0917 123 4567',
-      email: 'customer@quickfill.ph',
-      region: 'Luzon',
-      cityProvince: 'Quezon City, Metro Manila',
-      barangay: 'Barangay Loyola Heights',
-      postalCode: '1108',
-      completeAddress: 'Unit 402 Green Residences, Katipunan Ave',
-      notes: 'Received at lobby guardhouse'
-    },
-    items: [
-      {
-        id: 'delivered-item-green',
-        productId: 'machine',
-        title: 'QuickFill Kart (Eco Green) + Free 15L Brightwash Calamansi Fresh',
-        image: '/images/machine-green-v2.jpg',
-        price: 7999,
-        quantity: 1,
-        selectedColor: 'green',
-        includedFreeScent: 'calamansi'
-      },
-      {
-        id: 'delivered-item-refill',
-        productId: 'brightwash',
-        title: 'Brightwash Dishwashing Powder (Calamansi Fresh) – 15L Pack',
-        image: '/images/brightwash-green-v2.jpg',
-        price: 299,
-        quantity: 2,
-        selectedScent: 'calamansi',
-        selectedSize: '15L'
-      }
-    ],
-    subtotal: 8597,
-    shippingFee: 250,
-    total: 8847,
-    paymentMethod: 'gcash',
-    paymentReference: 'GCASH-849201743',
-    agreedToTerms: true,
-    currentStatus: 'delivered',
-    sellerNote: 'Successfully delivered and signed by Maria Santos.',
-    timeline: [
-      {
-        status: 'placed',
-        title: 'Order Placed',
-        description: 'Order registered and GCash payment verified.',
-        timestamp: 'Oct 28, 2026 09:15 AM',
-        completed: true,
-        current: false
-      },
-      {
-        status: 'packed',
-        title: 'Packed & Wooden Crated',
-        description: 'QuickFill Kart & Free 15L Brightwash pack prepared in wooden crate.',
-        timestamp: 'Oct 29, 2026 02:10 PM',
-        completed: true,
-        current: false
-      },
-      {
-        status: 'shipped',
-        title: 'Shipped to Region Hub',
-        description: 'Dispatched to J&T Cargo Quezon City Hub.',
-        timestamp: 'Oct 30, 2026 11:00 AM',
-        completed: true,
-        current: false
-      },
-      {
-        status: 'out_for_delivery',
-        title: 'Out for Delivery',
-        description: 'Courier rider en route to Katipunan Ave.',
-        timestamp: 'Nov 01, 2026 09:40 AM',
-        completed: true,
-        current: false
-      },
-      {
-        status: 'delivered',
-        title: 'Delivered',
-        description: 'Successfully delivered and signed by Maria Santos.',
-        timestamp: 'Nov 01, 2026 03:25 PM',
-        completed: true,
-        current: true
-      }
-    ]
-  }
-];
+const DEFAULT_ORDERS: Order[] = [];
 
-const DEFAULT_MESSAGES: ChatMessage[] = [
-  {
-    id: 'msg-welcome-1',
-    threadId: 'customer@quickfill.ph',
-    customerName: 'Maria Santos',
-    customerEmail: 'customer@quickfill.ph',
-    senderRole: 'seller',
-    senderName: 'Refilla Official Seller',
-    text: 'Welcome to Refilla! Feel free to message us here anytime about your QuickFill Kart (₱7,999 with Free 15L Brightwash Pack) or your order tracking.',
-    orderId: 'REF-PH-982140',
-    createdAt: new Date(Date.now() - 3600 * 1000).toISOString(),
-    readBySeller: true,
-    readByCustomer: false
-  }
-];
+const DEFAULT_MESSAGES: ChatMessage[] = [];
 
 type Listener = (state: CloudDatabaseState) => void;
 
@@ -311,12 +116,7 @@ class CloudStoreService {
       }
     }
     const passwords = { ...DEFAULT_PASSWORDS, ...(raw.passwords || {}) };
-    const rawOrders = raw.orders && raw.orders.length > 0 ? [...raw.orders] : [...DEFAULT_ORDERS];
-    for (const defOrder of DEFAULT_ORDERS) {
-      if (!rawOrders.some(o => o.id === defOrder.id)) {
-        rawOrders.push(defOrder);
-      }
-    }
+    const rawOrders = Array.isArray(raw.orders) ? [...raw.orders] : [];
     const orders = rawOrders.map(o => ({
       ...o,
       items: o.items.map(it =>
@@ -331,7 +131,7 @@ class CloudStoreService {
             : it
       )
     }));
-    const messages = raw.messages && raw.messages.length > 0 ? raw.messages : DEFAULT_MESSAGES;
+    const messages = Array.isArray(raw.messages) ? raw.messages : [];
     const rawPay = raw.paymentSettings || ({} as Partial<SellerPaymentSettings>);
     const paymentSettings: SellerPaymentSettings = {
       gcashNumber:

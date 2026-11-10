@@ -16,88 +16,14 @@ export const TrackOrderPage: React.FC<TrackOrderPageProps> = ({
   onViewMyOrders,
   onExit
 }) => {
-  const defaultQuery = activeOrder ? activeOrder.trackingNumber : (orders[0]?.trackingNumber || 'REF-PH-982140');
+  const defaultQuery = activeOrder ? activeOrder.trackingNumber : (orders[0]?.trackingNumber || '');
   const [query, setQuery] = useState(defaultQuery);
-  const [searched, setSearched] = useState(true);
+  const [searched, setSearched] = useState(Boolean(activeOrder || orders[0]));
   const [copiedTracking, setCopiedTracking] = useState(false);
 
-  // Fallback sample order if none placed yet
-  const [currentOrder, setCurrentOrder] = useState<Order>(
-    activeOrder || orders[0] || {
-      id: 'REF-PH-982140',
-      trackingNumber: 'JNT-PH-74819201',
-      createdAt: '2026-11-03 10:30 AM',
-      region: 'Luzon',
-      estimatedDeliveryDate: '1–5 business days (Estimated Nov 5 – Nov 8, 2026)',
-      customer: {
-        fullName: 'Maria Santos',
-        phone: '0917 123 4567',
-        email: 'maria.santos@gmail.com',
-        region: 'Luzon',
-        cityProvince: 'Quezon City, Metro Manila',
-        completeAddress: 'Unit 402 Green Residences, Katipunan Ave'
-      },
-      items: [
-        {
-          id: 'sample-item',
-          productId: 'machine',
-          title: 'QuickFill Kart (Eco Green) + Free 15L Brightwash Lemon',
-          image: '/images/machine-green-v2.jpg',
-          price: 7999,
-          quantity: 1,
-          selectedColor: 'green',
-          includedFreeScent: 'lemon'
-        }
-      ],
-      subtotal: 7999,
-      shippingFee: 250,
-      total: 8249,
-      paymentMethod: 'cod',
-      agreedToTerms: true,
-      currentStatus: 'placed',
-      timeline: [
-        {
-          status: 'placed',
-          title: 'Order Placed',
-          description: 'Order registered and payment verified.',
-          timestamp: 'Nov 03, 2026 10:30 AM',
-          completed: true,
-          current: true
-        },
-        {
-          status: 'packed',
-          title: 'Packed & Wooden Crated',
-          description: 'Item prepared in secure freight packaging with inspection seal.',
-          timestamp: 'Within 24 hours',
-          completed: false,
-          current: false
-        },
-        {
-          status: 'shipped',
-          title: 'Shipped to Region Hub',
-          description: 'Dispatched to courier hub servicing Luzon.',
-          timestamp: 'Pending dispatch',
-          completed: false,
-          current: false
-        },
-        {
-          status: 'out_for_delivery',
-          title: 'Out for Delivery',
-          description: 'Designated courier vehicle en route to delivery address.',
-          timestamp: 'Pending arrival',
-          completed: false,
-          current: false
-        },
-        {
-          status: 'delivered',
-          title: 'Delivered',
-          description: 'Customer accepts machine and receives official delivery receipt.',
-          timestamp: 'Nov 5 – Nov 8, 2026',
-          completed: false,
-          current: false
-        }
-      ]
-    }
+  // Active order or most recent real order (null if fresh store with no orders yet)
+  const [currentOrder, setCurrentOrder] = useState<Order | null>(
+    activeOrder || orders[0] || null
   );
 
   // Keep currentOrder synced in real time when Seller updates status in Cloud Store
@@ -106,13 +32,20 @@ export const TrackOrderPage: React.FC<TrackOrderPageProps> = ({
       const liveActive = orders.find(o => o.id === activeOrder.id) || activeOrder;
       setCurrentOrder(liveActive);
       setQuery(liveActive.trackingNumber);
+      setSearched(true);
       return;
     }
-    const liveMatch = orders.find(
-      o => o.id === currentOrder.id || o.trackingNumber === currentOrder.trackingNumber
-    );
-    if (liveMatch) {
-      setCurrentOrder(liveMatch);
+    if (currentOrder) {
+      const liveMatch = orders.find(
+        o => o.id === currentOrder.id || o.trackingNumber === currentOrder.trackingNumber
+      );
+      if (liveMatch) {
+        setCurrentOrder(liveMatch);
+      }
+    } else if (orders[0]) {
+      setCurrentOrder(orders[0]);
+      setQuery(orders[0].trackingNumber);
+      setSearched(true);
     }
   }, [orders, activeOrder]);
 
@@ -125,14 +58,12 @@ export const TrackOrderPage: React.FC<TrackOrderPageProps> = ({
            o.trackingNumber.toLowerCase() === query.trim().toLowerCase()
     );
 
-    if (found) {
-      setCurrentOrder(found);
-    }
+    setCurrentOrder(found || null);
     setSearched(true);
   };
 
   const handleCopyTracking = () => {
-    if (navigator.clipboard) {
+    if (currentOrder && navigator.clipboard) {
       navigator.clipboard.writeText(currentOrder.trackingNumber);
       setCopiedTracking(true);
       setTimeout(() => setCopiedTracking(false), 2000);
@@ -217,7 +148,7 @@ export const TrackOrderPage: React.FC<TrackOrderPageProps> = ({
                     setSearched(true);
                   }}
                   className={`px-2.5 py-1 rounded-lg font-mono border transition cursor-pointer ${
-                    currentOrder.id === o.id
+                    currentOrder?.id === o.id
                       ? 'bg-emerald-50 text-[#1b4d2e] border-emerald-300 font-bold'
                       : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
                   }`}
@@ -229,8 +160,34 @@ export const TrackOrderPage: React.FC<TrackOrderPageProps> = ({
           )}
         </div>
 
+        {/* Empty State when no order is found or none placed yet */}
+        {!currentOrder && (
+          <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-200 text-center space-y-3 animate-fadeIn">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-[#1b4d2e] border border-emerald-200 flex items-center justify-center mx-auto">
+              <Truck className="w-6 h-6" />
+            </div>
+            <h3 className="text-base font-black text-gray-900">
+              {searched && query.trim() ? `No order found matching "${query}"` : 'No Active Orders Yet'}
+            </h3>
+            <p className="text-xs text-gray-500 max-w-md mx-auto">
+              Once you place an order at checkout, your official Refilla Order Number and live 5-step J&amp;T Cargo tracking timeline will appear here automatically.
+            </p>
+            {onExit && (
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={onExit}
+                  className="px-6 py-2.5 rounded-full bg-[#1b4d2e] hover:bg-[#143a22] text-white text-xs font-bold transition cursor-pointer"
+                >
+                  Browse Store &amp; Shop Now
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* STEP-BY-STEP TRACKING PROGRESS BAR & ORDER DETAILS */}
-        {searched && (
+        {searched && currentOrder && (
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-200 space-y-7 animate-fadeIn relative">
 
             {/* Card Header with Order Info & Quick Close X */}
